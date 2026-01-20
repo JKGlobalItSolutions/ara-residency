@@ -49,11 +49,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <FaPhone className="text-primary flex-shrink-0" />
-                <span>+91 99943 23430</span>
+                <span>+91 94439 63140</span>
               </li>
               <li className="flex items-center space-x-3 text-muted-foreground">
                 <FaEnvelope className="text-primary flex-shrink-0" />
-                <span>info@araresidency.com</span>
+                <span>araresidency618@gmail.com</span>
               </li>
             </ul>
 

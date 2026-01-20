@@ -25,7 +25,7 @@ const Contact = () => {
     }
 
     // Send via WhatsApp
-    const phoneNumber = '919999999999'; // Replace with actual number
+    const phoneNumber = '916369429863'; // Replace with actual number
     const message = `Name: ${formData.name}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
@@ -96,7 +96,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+91 99943 23430 </p>
+                    <p className="text-muted-foreground">+91 94439 63140 </p>
                     {/* <p className="text-muted-foreground">+91 XXXXX XXXXX</p> */}
                   </div>
                 </div>

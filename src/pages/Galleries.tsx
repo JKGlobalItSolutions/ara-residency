@@ -5,8 +5,8 @@ import { X } from 'lucide-react';
 import hero1 from '@/assets/hero-1.jpeg';
 import hero2 from '@/assets/hero-2.jpeg';
 import hero3 from '@/assets/hero-3.jpeg';
-import roomAc1 from '@/assets/room-ac-1.jpg';
-import roomAc2 from '@/assets/room-ac-2.jpg';
+import roomAc1 from '@/assets/room-ac-1.jpeg';
+import roomAc2 from '@/assets/roomac-2.jpeg';
 import roomBathroom from '@/assets/room-bathroom.jpeg';
 import templeImage from '@/assets/temple.png';
 import girivalam from '@/assets/girivalam.jpg';
@@ -17,11 +17,11 @@ const Galleries = () => {
 
   const galleryImages = [
     { src: hero1, title: 'Hotel Exterior' },
-    { src: hero2, title: 'Lobby Area' },
-    { src: hero3, title: 'Pool View' },
+    { src: hero2, title: 'standard Room' },
+    { src: hero3, title: 'Bedroom' },
     { src: roomAc1, title: 'Deluxe Room' },
     { src: roomAc2, title: 'Room Interior' },
-    { src: roomBathroom, title: 'Bathroom' },
+    { src: roomBathroom, title: 'Bedroom' },
     { src: templeImage, title: 'Temple View' },
     { src: girivalam, title: 'Girivalam Path' },
     { src: ashram, title: 'Ashram' },

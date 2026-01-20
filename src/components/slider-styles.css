@@ -1,0 +1,157 @@
+/* Custom Swiper Slider Styles */
+
+/* Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  color: hsl(var(--primary)) !important;
+}
+
+.swiper-button-next {
+  right: 15px !important;
+}
+
+.swiper-button-prev {
+  left: 15px !important;
+}
+
+/* Pagination Bullets */
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 2px solid transparent !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: hsl(var(--primary)) !important;
+  width: 32px !important;
+  border-radius: 6px !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  transform: scale(1.2) !important;
+}
+
+/* Room Card Specific Styles */
+.room-card-swiper .swiper-button-next,
+.room-card-swiper .swiper-button-prev {
+  width: 44px !important;
+  height: 44px !important;
+  opacity: 0 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.room-card-swiper:hover .swiper-button-next,
+.room-card-swiper:hover .swiper-button-prev {
+  opacity: 1 !important;
+}
+
+.room-card-swiper .swiper-button-next::after,
+.room-card-swiper .swiper-button-prev::after {
+  font-size: 18px !important;
+}
+
+.room-card-swiper .swiper-pagination {
+  bottom: 12px !important;
+}
+
+.room-card-swiper .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.room-card-swiper .swiper-pagination-bullet-active {
+  width: 24px !important;
+}
+
+/* Rooms Page Specific Styles */
+.rooms-page-swiper .swiper-pagination {
+  bottom: 20px !important;
+}
+
+/* Smooth Slide Transitions */
+.swiper-slide {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
+}
+
+/* Image Enhancement */
+.swiper-slide img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.05) !important;
+}
+
+/* Loading State */
+.swiper-lazy-loading {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.swiper-lazy-loaded {
+  opacity: 1;
+}
+
+/* Hero Slider Custom Styles */
+.hero-swiper .swiper-pagination-bullet {
+  width: 14px !important;
+  height: 14px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  width: 40px !important;
+  background: hsl(var(--primary)) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 16px !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 24px !important;
+  }
+}

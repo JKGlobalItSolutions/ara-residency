@@ -3,7 +3,17 @@ import { Link } from 'react-router-dom';
 import HeroSlider from '@/components/HeroSlider';
 import RoomCard from '@/components/RoomCard';
 import TourCard from '@/components/TourCard';
-import roomImage from '@/assets/room-ac-1.jpeg';
+
+// Import images for AC Room (Deluxe)
+import roomAc1 from '@/assets/room-ac-1.jpeg';
+import roomAc2 from '@/assets/room-ac-2.jpeg';
+import roomAc3 from '@/assets/room-ac-3.jpeg';
+
+// Import images for Non-AC Room (Standard)
+import roomac1 from '@/assets/roomac-1.jpeg';
+import roomac2 from '@/assets/roomac-2.jpeg';
+import roomac3 from '@/assets/roomac-3.jpeg';
+
 import templeImage from '@/assets/temple.png';
 import girivalam from '@/assets/girivalam.jpg';
 import ashram from '@/assets/ashram.jpg';
@@ -11,23 +21,16 @@ import ashram from '@/assets/ashram.jpg';
 const Home = () => {
   const roomPreviews = [
     {
-      title: 'Deluxe AC Room',
-      price: '₹2000/night',
-      image: roomImage,
-      features: ['WiFi', 'TV', 'Room Service', 'AC'],
-      hasAC: true,
-    },
-    {
       title: 'Standard AC Room',
       price: '₹2000/night',
-      image: roomImage,
+      images: [roomAc1, roomAc2, roomAc3],
       features: ['WiFi', 'TV', 'Room Service', 'AC'],
       hasAC: true,
     },
     {
       title: 'Standard Room',
       price: '₹1500/night',
-      image: roomImage,
+      images: [roomac1, roomac2, roomac3],
       features: ['WiFi', 'TV', 'Room Service'],
       hasAC: false,
     },
@@ -76,7 +79,7 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-10">
             {roomPreviews.map((room, index) => (
               <RoomCard key={index} {...room} />
             ))}
@@ -151,7 +154,7 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-            {[roomImage, templeImage, girivalam, ashram, roomImage, templeImage].map(
+            {[roomAc1, templeImage, girivalam, ashram, roomac1, templeImage].map(
               (img, index) => (
                 <motion.div
                   key={index}

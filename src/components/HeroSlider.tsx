@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
+import './slider-styles.css';
 
 import hero1 from '@/assets/hero-1.jpeg';
-import hero2 from '@/assets/hero-2.jpeg';
+// import hero2 from '@/assets/hero-2.jpeg';
 import hero3 from '@/assets/hero-3.jpeg';
 
 const HeroSlider = () => {
@@ -16,11 +17,11 @@ const HeroSlider = () => {
       title: 'ARA RESIDENCY HOTEL',
       subtitle: 'Comfort | Luxury | Peace',
     },
-    {
-      image: hero2,
-      title: 'Welcome to Paradise',
-      subtitle: 'Experience Luxury Living',
-    },
+    // {
+    //   image: hero2,
+    //   title: 'Welcome to Paradise',
+    //   subtitle: 'Experience Luxury Living',
+    // },
     {
       image: hero3,
       title: 'Your Perfect Getaway',
@@ -39,9 +40,11 @@ const HeroSlider = () => {
         }}
         pagination={{
           clickable: true,
+          dynamicBullets: false,
         }}
         loop={true}
-        className="h-full w-full"
+        speed={1200}
+        className="h-full w-full hero-swiper"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>

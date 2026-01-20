@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, EffectCoverflow, Autoplay } from 'swiper/modules';
 import {
   FaWifi,
   FaTv,
@@ -14,15 +14,23 @@ import {
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
+import '@/components/slider-styles.css';
 
+// Import images for AC Room (Deluxe)
 import roomAc1 from '@/assets/room-ac-1.jpeg';
+import roomAc2 from '@/assets/room-ac-2.jpeg';
+import roomAc3 from '@/assets/room-ac-3.jpeg';
+
+// Import images for Non-AC Room (Standard)
+import roomac1 from '@/assets/roomac-1.jpeg';
+import roomac2 from '@/assets/roomac-2.jpeg';
+import roomac3 from '@/assets/roomac-3.jpeg';
 
 interface CategoryFilter {
   id: 'all' | 'ac' | 'non-ac';
   label: string;
 }
-import roomAc2 from '@/assets/room-ac-2.jpeg';
-import roomBathroom from '@/assets/room-bathroom.jpeg';
 
 const Rooms = () => {
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'ac' | 'non-ac'>('all');
@@ -32,7 +40,7 @@ const Rooms = () => {
       category: 'ac',
       title: 'Standard Room - AC',
       price: '₹2000',
-      images: [roomAc1, roomAc2, roomBathroom],
+      images: [roomAc1, roomAc2, roomAc3],
       facilities: [
         { icon: FaSnowflake, name: 'Air Conditioning' },
         { icon: FaWifi, name: 'Free WiFi' },
@@ -42,11 +50,12 @@ const Rooms = () => {
         { icon: FaShower, name: 'Modern Bathroom' },
       ],
     },
+    
     {
       category: 'non-ac',
       title: 'Standard Room - Non AC',
       price: '₹1500',
-      images: [roomAc1, roomAc2, roomBathroom],
+      images: [roomac1, roomac2, roomac3],
       facilities: [
         { icon: FaWifi, name: 'Free WiFi' },
         { icon: FaTv, name: 'LED TV' },
@@ -117,26 +126,52 @@ const Rooms = () => {
                 {/* Image Slider */}
                 <div className="relative">
                   <Swiper
-                    modules={[Navigation, Pagination]}
+                    modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
                     navigation
-                    pagination={{ clickable: true }}
-                    className="h-80 rounded-lg"
+                    pagination={{ 
+                      clickable: true,
+                      dynamicBullets: true,
+                    }}
+                    effect="coverflow"
+                    coverflowEffect={{
+                      rotate: 15,
+                      stretch: 0,
+                      depth: 150,
+                      modifier: 1.5,
+                      slideShadows: true,
+                    }}
+                    autoplay={{
+                      delay: 4000,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }}
+                    loop={true}
+                    speed={800}
+                    className="h-80 rounded-lg rooms-page-swiper"
                   >
                     {room.images.map((img, imgIndex) => (
                       <SwiperSlide key={imgIndex}>
-                        <img
-                          src={img}
-                          alt={`${room.title} - Image ${imgIndex + 1}`}
-                          className="w-full h-full object-cover"
-                        />
+                        <div className="relative w-full h-full overflow-hidden rounded-lg group/slide">
+                          <img
+                            src={img}
+                            alt={`${room.title} - Image ${imgIndex + 1}`}
+                            className="w-full h-full object-cover transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover/slide:opacity-100 transition-opacity duration-500" />
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
 
                   {room.category === 'ac' && (
-                    <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold z-10 flex items-center gap-2">
-                      <FaSnowflake /> AC Room
-                    </div>
+                    <motion.div 
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+                      className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold z-10 flex items-center gap-2 shadow-xl backdrop-blur-sm"
+                    >
+                      <FaSnowflake className="animate-pulse" /> AC Room
+                    </motion.div>
                   )}
                 </div>
 
