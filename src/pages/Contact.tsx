@@ -25,7 +25,7 @@ const Contact = () => {
     }
 
     // Send via WhatsApp
-    const phoneNumber = '916369429863'; // Replace with actual number
+    const phoneNumber = '9194439 63140'; // Replace with actual number
     const message = `Name: ${formData.name}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
@@ -83,7 +83,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Address</h3>
                     <p className="text-muted-foreground">
-                      ARA Residency Hotel<br />
+                       No.63/1 Durgainammiyadal, Polur Rd, opp. Krishna mahal<br />
                       Tiruvannamalai, Tamil Nadu<br />
                       India - 606601
                     </p>
